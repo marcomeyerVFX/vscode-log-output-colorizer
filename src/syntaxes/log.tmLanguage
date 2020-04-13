@@ -52,7 +52,19 @@
                 <key>match</key>
                 <string>\b(?i:((\.)*[a-z]|[0-9])*(Exception|Error|Failure|Fail))\b</string>
                 <key>name</key>
-                <string>invalid</string>
+                <string>token.error-token</string>
+            </dict>
+            <dict>
+                <key>match</key>
+                <string>\b(?i:(warning|warn|test|debug|null|undefined|NaN))(\:|\b)</string>
+                <key>name</key>
+                <string>token.warn-token</string>
+            </dict>
+            <dict>
+                <key>match</key>
+                <string>\b(?i:(PASS|Success|ok))(\:|\b)</string>
+                <key>name</key>
+                <string>token.info-token</string>
             </dict>
             <dict>
                 <!-- Date MM/DD/(YY)YY -->
@@ -114,12 +126,6 @@
                 <string>\b(?i:(hint|info|information|true|log))(\:|\b)</string>
                 <key>name</key>
                 <string>keyword</string>
-            </dict>
-            <dict>
-                <key>match</key>
-                <string>\b(?i:(warning|warn|test|debug|null|undefined|NaN))(\:|\b)</string>
-                <key>name</key>
-                <string>invalid.deprecated</string>
             </dict>
             <dict>
                 <key>match</key>
