@@ -34,6 +34,7 @@ jobs:
         uses: ncipollo/release-action@v1
         with:
           artifacts: "*.vsix"
+          tag: ${GITHUB_SHA::8}
           prerelease: true
           token: ${{ secrets.GITHUB_TOKEN }}
         
