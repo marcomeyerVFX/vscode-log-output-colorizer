@@ -30,11 +30,13 @@ jobs:
         uses: lannonbr/vsce-action@master
         with:
           args: "package" 
+      - name: set env
+        run: echo "::set-env name=NOW::$(date +'%Y-%m-%dT%H:%M:%S')"
       - name: Create Release
         uses: ncipollo/release-action@v1
         with:
           artifacts: "*.vsix"
-          tag: ${GITHUB_SHA::8}
+          tag: ${{ env.NOW }}
           prerelease: true
           token: ${{ secrets.GITHUB_TOKEN }}
         
